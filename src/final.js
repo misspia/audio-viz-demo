@@ -1,6 +1,9 @@
 import * as THREE from "three"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import audioSrc from "./audio/audio-1.mp3"
+// import audioSrc from "./audio/audio-1.mp3"
+import audioSrc from "./audio/audio-2.mp3"
+// import audioSrc from "./audio/audio-3.mp3"
+// import audioSrc from "./audio/audio-4.mp3"
 import { remapFreq } from "./utils"
 
 /*****************************************************************************************************************************************************************
@@ -22,7 +25,7 @@ source.connect(analyser)
 source.connect(audioContext.destination)
 
 audioElement.loop = true
-audioElement.volume = 0.0
+audioElement.volume = 1.0
 audioElement.play()
 
 
@@ -42,7 +45,7 @@ renderer.setClearColor(0xffdddd);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-camera.position.set(10, 10, 10)
+camera.position.set(15, 15, 15)
 camera.lookAt(0, 0, 0)
 
 const controls = new OrbitControls(camera, renderer.domElement)
@@ -94,6 +97,14 @@ frequencyData.forEach(() => {
 
   angle += angleIncrement
 
+//   mesh.position.set(
+//     x,
+//     0,
+//     0
+//   )
+
+//   x += 1
+
   scene.add(mesh)
   bars.push(mesh)
 })
@@ -135,5 +146,9 @@ const draw = () => {
   requestAnimationFrame(() => draw())
 }
 
-draw()
 
+
+
+
+
+draw()
